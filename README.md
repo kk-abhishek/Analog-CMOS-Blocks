@@ -2,7 +2,7 @@
 
 Design, schematic capture, and SPICE-level simulation (DC / Transient / AC) of seven fundamental CMOS analog building blocks — implemented in **Electric VLSI Design System** with **ngspice/HSPICE**, targeting a **130 nm CMOS** process.
 
-> M.Tech VLSI Design — 2nd Semester Lab | UVCE, Bangalore
+> M.Tech VLSI Design| UVCE, Bangalore
 
 ---
 
@@ -20,7 +20,7 @@ This repository documents the complete design flow — from schematic to simulat
 | 06 | Current Mirror | PMOS reference/mirror pair |
 | 07 | Two-Stage Op-Amp | Diff. Amp + CS gain stage |
 
-Each experiment includes its schematic, SPICE netlist, and DC/Transient/AC simulation results.
+Each blocks includes its schematic, SPICE netlist, and DC/Transient/AC simulation results.
 
 ---
 
@@ -33,10 +33,9 @@ vlsi-cmos-amplifier-lab/
 ├── LICENSE
 ├── .gitignore
 │
-├── docs/                                # Reference & exam-prep material
-│   ├── VLSI_Amplifiers_Lab_Exam_Prep.pdf
-│   ├── VLSI_Amplifiers_Viva_QandA.pdf
-│   └── images/                          # Cover/summary figures used in README
+├── docs/                                
+│   ├── CMOS_Amplifiers_Result.pdf   # Cover/summary figures used 
+│                          
 │
 ├── tech/
 │   └── 130micron.txt                    # Process/device model file (.include)
@@ -89,7 +88,7 @@ vlsi-cmos-amplifier-lab/
     └── README.md
 ```
 
-**Naming convention:** each experiment folder is prefixed `NN_` to preserve lab order, and contains its own `schematic/`, `spice/`, `results/`, and a short `README.md` (Aim → Design Parameters → Equations → Circuit → Waveforms → Result), mirroring the exam-prep sheet in `docs/`.
+**Naming convention:** each experiment folder is prefixed `NN_` to preserve order, and contains its own `schematic/`, `spice/`, `results/`, and a short `README.md` (Aim → Design Parameters → Equations → Circuit → Waveforms → Result), mirroring the exam-prep sheet in `docs/`.
 
 ---
 
@@ -142,8 +141,9 @@ Update the path in each netlist to point to `tech/130micron.txt` relative to you
 
 ## 📚 Reference Material
 
-- [`docs/VLSI_Amplifiers_Lab_Exam_Prep.pdf`](docs/VLSI_Amplifiers_Lab_Exam_Prep.pdf) — Aim, design parameters, I_D/R_out equations, circuits & waveforms for all 7 experiments.
-- [`docs/VLSI_Amplifiers_Viva_QandA.pdf`](docs/VLSI_Amplifiers_Viva_QandA.pdf) — Viva/exam question bank with answers.
+The experiments, circuit design methodology, simulation procedures, and theoretical concepts presented in this repository are based on the following reference:
+
+- Behzad Razavi, *Design of Analog CMOS Integrated Circuits*, McGraw-Hill Education, First Edition.
 
 ---
 
