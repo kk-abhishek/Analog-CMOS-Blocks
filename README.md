@@ -1,6 +1,6 @@
 # VLSI CMOS Amplifier Design & Simulation Lab
 
-Design, schematic capture, and SPICE-level simulation (DC / Transient / AC) of seven fundamental CMOS analog building blocks — implemented in **Electric VLSI Design System** with **ngspice/HSPICE**, targeting a **130 nm CMOS** process.
+Design, schematic capture, and SPICE-level simulation (DC / Transient / AC) of seven fundamental CMOS analog building blocks — implemented in **Electric VLSI Design System** with **LTspice/ngspice/HSPICE**, targeting a **130 nm CMOS** process.
 
 > M.Tech VLSI Design| UVCE, Bangalore
 
