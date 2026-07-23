@@ -1,0 +1,31 @@
+*** SPICE deck for cell Diff_amp_sim{sch} from library 7zdiff_amp1
+*** Created on Thu Jun 11, 2026 20:29:10
+*** Last revised on Sun Jul 19, 2026 19:32:53
+*** Written on Mon Jul 20, 2026 18:55:52 by Electric VLSI Design System,
+*version 9.03
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Diff_amplifier FROM CELL Diff_amplifier{sch}
+.SUBCKT Diff_amplifier IDC V1 V2 Vout Vss vdd
+Mnmos-4@4 net@129 V1 net@86 Vss nmos L=2U W=0.6U
+Mnmos-4@5 Vout V2 net@86 Vss nmos L=2U W=0.6U
+Mnmos-4@6 IDC IDC Vss Vss nmos L=2U W=0.9U
+Mnmos-4@7 net@86 IDC Vss Vss nmos L=2U W=0.9U
+Mpmos-4@4 net@129 net@129 vdd vdd pmos L=2U W=3U
+Mpmos-4@5 Vout net@129 vdd vdd pmos L=2U W=3U
+.ENDS Diff_amplifier
+
+*** TOP LEVEL CELL: Diff_amp_sim{sch}
+IDCCurren@1 Vdd IDC DC 30uA
+XDiff_amp@0 IDC V1 V2 Vout Vss Vdd Diff_amplifier
+
+* Spice Code nodes in cell cell 'Diff_amp_sim{sch}'
+VDD Vdd 0 DC 2.5
+VSS Vss 0 DC -2.5
+VIN V1 0 SIN(0 0.005 1k 0 0 0)
+VIN1 V2 0 DC 0
+*.dc Vin -5 20 1m
+.tran 0 5m
+.include "C:\130micron.txt"
+.END

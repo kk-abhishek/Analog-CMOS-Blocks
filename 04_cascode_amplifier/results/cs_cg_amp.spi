@@ -1,0 +1,22 @@
+*** SPICE deck for cell cs_cg_amp{sch} from library 2zCascode_amplifier1
+*** Created on Sat Jun 13, 2026 22:57:32
+*** Last revised on Mon Jul 20, 2026 18:37:27
+*** Written on Mon Jul 20, 2026 18:42:27 by Electric VLSI Design System,
+*version 9.03
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: cs_cg_amp{sch}
+Mnmos-4@2 Vout Vb net@93 Vss nmos L=2U W=10U
+Mnmos-4@3 net@93 Vin Vss Vss nmos L=2U W=10U
+Rres@1 vdd Vout 10000
+
+* Spice Code nodes in cell cell 'cs_cg_amp{sch}'
+VDD Vdd 0 DC 2.5
+VBias Vb 0 DC 2.5
+VSS Vss 0 DC 0
+VIN Vin 0 SIN(0.5 5m 1k 0 0 0)
+*.dc VIN -5 20 1m
+.tran 0 5m
+.include "C:\130micron.txt"
+.END

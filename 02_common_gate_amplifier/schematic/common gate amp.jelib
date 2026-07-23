@@ -1,0 +1,75 @@
+# header information:
+H4zCommon_gate_amplifier1|9.03
+
+# Views:
+Vicon|ic
+Vschematic|sch
+
+# External Libraries:
+
+Lspiceparts|spiceparts
+
+# Technologies:
+Ttft|ScaleFORtft()D300.0
+
+# Cell AC_CG_amp;1{sch}
+CAC_CG_amp;1{sch}||schematic|1781418943697|1784468205495|
+Ispiceparts:ACVoltage;1{ic}|ACVoltag@0||-5.5|-6.5|||D5G4;|ATTR_ACVoltage(D5G0.5;NPY1;)S1V|ATTR_DCVoltage(D5G0.5;NPY1.5;)S1V|ATTR_Delay(D5G0.5;NPY-1.5;)S1ns|ATTR_Frequency(D5G0.5;NPY-1;)S1K
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NOff-Page|conn@0||-12.5|3.5|||RR|
+NOff-Page|conn@1||-5.5|14|||RRR|
+NOff-Page|conn@2||2.5|0.5|||RR|
+NOff-Page|conn@3||-5.5|-15|||R|
+N4-Port-Transistor|nmos-4@0||-3.5|0.5|||XR||ATTR_length(D5G0.5;X-0.5;Y-1;)S10|ATTR_width(D5G1;X0.5;Y-1;)S50|SIM_spice_model(D5G1;X-0.5;Y-3;)Snmos
+NWire_Pin|pin@0||-10|-0.5||||
+NWire_Pin|pin@1||-5.5|3.5||||
+Ngeneric:Invisible-Pin|pin@2||7.5|7|||||SIM_spice_card(D5G1;)S[VDD Vdd 0 DC 2.5,VSS Vss 0 DC -2.5,Vbias Vb 0 DC 2.5,*VIN Vin 0 SIN(0 0.4 1K),.ac DEC 20 100 5g,".include \"C:\\electric\\130micron.txt\""]
+NWire_Pin|pin@3||-10|-11||||
+NWire_Pin|pin@4||-5.5|-11||||
+NResistor|res@0||-5.5|6.5|||R||SCHEM_resistance(D5G1;)S10k
+Awire|net@0|||2700|ACVoltag@0|plus|-5.5|-3.5|nmos-4@0|s|-5.5|-1.5
+Awire|net@1|||900|res@0|a|-5.5|4.5|pin@1||-5.5|3.5
+Awire|net@2|||900|pin@1||-5.5|3.5|nmos-4@0|d|-5.5|2.5
+Awire|net@3|||1800|conn@0|a|-10.5|3.5|pin@1||-5.5|3.5
+Awire|net@6|||900|conn@1|y|-5.5|12|res@0|b|-5.5|8.5
+Awire|net@7|||0|conn@2|y|0.5|0.5|nmos-4@0|g|-2.5|0.5
+Awire|net@8|||0|nmos-4@0|b|-5.5|-0.5|pin@0||-10|-0.5
+Awire|net@9|||900|pin@0||-10|-0.5|pin@3||-10|-11
+Awire|net@10|||900|ACVoltag@0|minus|-5.5|-9.5|pin@4||-5.5|-11
+Awire|net@11|||900|pin@4||-5.5|-11|conn@3|y|-5.5|-13
+Awire|net@12|||1800|pin@3||-10|-11|pin@4||-5.5|-11
+EVb||D5G2;|conn@2|a|I
+EVdd||D5G2;|conn@1|a|P
+EVout||D5G2;|conn@0|a|O
+EVss||D5G2;|conn@3|a|U
+X
+
+# Cell common_gate_amp;1{sch}
+Ccommon_gate_amp;1{sch}||schematic|1781416765896|1784551463641|
+Ispiceparts:ACVoltage;1{ic}|ACVoltag@1||2.5|6.5|||D5G4;|ATTR_ACVoltage(D5G0.5;NPY1;)S1V|ATTR_DCVoltage(D5G0.5;NPY1.5;)S1V|ATTR_Delay(D5G0.5;NPY-1.5;)S1ns|ATTR_Frequency(D5G0.5;NPY-1;)S1K
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NOff-Page|conn@0||-4.5|16.5|||RR|
+NOff-Page|conn@1||2.5|27|||RRR|
+NOff-Page|conn@2||10.5|13.5|||RR|
+NOff-Page|conn@3||2.5|-2|||R|
+NGround|gnd@0||-2|-1.5||||
+N4-Port-Transistor|nmos-4@0||4.5|13.5|||XR||ATTR_length(D5G0.5;X-0.5;Y-1;)S10|ATTR_width(D5G1;X0.5;Y-1;)S50|SIM_spice_model(D5G1;X-0.5;Y-3;)Snmos
+NWire_Pin|pin@1||-2|12.5||||
+NWire_Pin|pin@4||2.5|16.5||||
+Ngeneric:Invisible-Pin|pin@5||15.5|20|||||SIM_spice_card(D5G1;)S[VDD Vdd 0 DC 2.5,VSS Vss 0 DC -2.5,Vbias Vb 0 DC 2.5,VIN Vin 0 SIN(0 0.4 1K),.dc VIN -5 20 1m,*.tran 0 5m,".include \"C:\\130micron.txt\""]
+NResistor|res@0||2.5|19.5|||R||SCHEM_resistance(D5G1;)S10k
+Awire|net@1|||2700|ACVoltag@1|plus|2.5|9.5|nmos-4@0|s|2.5|11.5
+Awire|net@2|||900|conn@1|y|2.5|25|res@0|b|2.5|21.5
+Awire|net@6|||0|conn@2|y|8.5|13.5|nmos-4@0|g|5.5|13.5
+Awire|net@8|||0|nmos-4@0|b|2.5|12.5|pin@1||-2|12.5
+Awire|net@14|||900|res@0|a|2.5|17.5|pin@4||2.5|16.5
+Awire|net@15|||900|pin@4||2.5|16.5|nmos-4@0|d|2.5|15.5
+Awire|net@16|||1800|conn@0|a|-2.5|16.5|pin@4||2.5|16.5
+Awire|net@17|||900|ACVoltag@1|minus|2.5|3.5|conn@3|y|2.5|0
+Awire|net@18|||2700|gnd@0||-2|0.5|pin@1||-2|12.5
+EVb||D5G2;|conn@2|a|I
+EVdd||D5G2;|conn@1|y|P
+EVin||D5G2;|ACVoltag@1|minus|I
+EVout||D5G2;|conn@0|y|O
+EVss||D5G2;|conn@3|y|G
+X

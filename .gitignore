@@ -1,0 +1,5 @@
+*.bak
+*.lock
+*.tmp
+*.jelib~
+.DS_Store

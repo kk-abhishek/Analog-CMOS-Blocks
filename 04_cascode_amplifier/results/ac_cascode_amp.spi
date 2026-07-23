@@ -1,0 +1,22 @@
+*** SPICE deck for cell ac_cascode_amp{sch} from library 2zCascode_amplifier1
+*** Created on Wed Jun 17, 2026 15:21:23
+*** Last revised on Mon Jul 20, 2026 18:46:02
+*** Written on Mon Jul 20, 2026 18:46:41 by Electric VLSI Design System,
+*version 9.03
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: ac_cascode_amp{sch}
+Mnmos-4@0 Vout Vb net@11 Vss nmos L=0.4U W=10U
+Mnmos-4@1 net@11 net@6 Vss Vss nmos L=0.4U W=10U
+Rres@0 vdd Vout 10000
+VACVoltag@0 net@6 Vss DC=1V AC=2V SIN (1V 2V 1,000 1ns)
+
+* Spice Code nodes in cell cell 'ac_cascode_amp{sch}'
+VDD Vdd 0 DC 2.5
+VSS Vss 0 DC -2.5
+VBias Vb 0 DC 2.5
+.ac DEC 10 1 1T
+.include "C:\130micron.txt"
+.END
+.END

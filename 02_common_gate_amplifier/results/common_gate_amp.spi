@@ -1,0 +1,26 @@
+*** SPICE deck for cell common_gate_amp{sch} from library
+*4zCommon_gate_amplifier1
+*** Created on Sun Jun 14, 2026 11:29:25
+*** Last revised on Mon Jul 20, 2026 18:14:23
+*** Written on Mon Jul 20, 2026 18:15:36 by Electric VLSI Design System,
+*version 9.03
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd
+
+*** TOP LEVEL CELL: 4zCommon_gate_amplifier1:common_gate_amp{sch}
+Mnmos-4@0 Vout Vb net@1 gnd nmos L=2U W=10U
+Rres@0 vdd Vout 10000
+VACVoltag@1 net@1 Vin DC=1V AC=1V SIN (1V 1V 1,000 1ns)
+
+* Spice Code nodes in cell cell
+*'4zCommon_gate_amplifier1:common_gate_amp{sch}'
+VDD Vdd 0 DC 2.5
+VSS Vss 0 DC -2.5
+Vbias Vb 0 DC 2.5
+VIN Vin 0 SIN(0 0.4 1K)
+.dc VIN -5 20 1m
+*.tran 0 5m
+.include "C:\130micron.txt"
+.END

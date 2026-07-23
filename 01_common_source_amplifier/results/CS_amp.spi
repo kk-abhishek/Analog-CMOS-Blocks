@@ -1,0 +1,21 @@
+*** SPICE deck for cell CS_amp{sch} from library 5zCS_amp1
+*** Created on Wed Jun 17, 2026 19:09:15
+*** Last revised on Mon Jul 20, 2026 17:37:26
+*** Written on Mon Jul 20, 2026 18:05:41 by Electric VLSI Design System,
+*version 9.03
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: 5zCS_amp1:CS_amp{sch}
+Mnmos-4@0 Vout Vbias Vss Vss nmos L=0.4U W=2U
+Mpmos-4@0 vdd Vin Vout vdd pmos L=0.4U W=10U
+
+* Spice Code nodes in cell cell '5zCS_amp1:CS_amp{sch}'
+VDD Vdd 0 DC 2.5
+VSS Vss 0 DC -2.5
+Vbias Vbias 0 Dc 2.5
+VIN Vin 0 SIN(0 5m 1k 0 0 0)
+*.dc Vin -2.5 20 1m
+.tran 0 5m
+.include "C:\130micron.txt"
+.END

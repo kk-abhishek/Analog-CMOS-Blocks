@@ -1,0 +1,22 @@
+*** SPICE deck for cell cd_amp_ac{sch} from library 3zcd_amplifier1
+*** Created on Sun Jul 05, 2026 16:20:31
+*** Last revised on Sun Jul 19, 2026 19:21:54
+*** Written on Mon Jul 20, 2026 18:27:30 by Electric VLSI Design System,
+*version 9.03
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd
+
+*** TOP LEVEL CELL: cd_amp_ac{sch}
+Mnmos-4@0 vdd Vin Vout Vss nmos L=0.4U W=10U
+Mnmos-4@1 Vout Vbias Vss Vss nmos L=0.4U W=2U
+VACVoltag@1 Vin gnd DC=1V AC=2V SIN (1V 2V 1,000 1ns)
+
+* Spice Code nodes in cell cell 'cd_amp_ac{sch}'
+VDD Vdd 0 DC 2.5
+VSS Vss 0 DC -2.5
+Vbias Vbias 0 Dc 0.5
+.ac dec 20 100 100g
+.include "C:\130micron.txt"
+.END
